@@ -1,0 +1,6 @@
+- le variabili iniziano sempre con '$'
+- i nomi delle variabili devono sempre iniziare o con un carattere alfabetico o con '_'
+- la variabile $this non può essere assegnata dall'utente
+
+- in php le variabili vengono assegnate per valore a default
+- per assegnare con riferimento bisogna anteporre '&' alla variabile a cui ci si vuole riferire

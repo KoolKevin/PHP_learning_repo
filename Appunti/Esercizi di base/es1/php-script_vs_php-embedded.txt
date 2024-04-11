@@ -1,0 +1,11 @@
+Il codice php può essere sia uno script a se stante oppure può essere embedded dentro a un file
+
+Nel caso di php embedded il codice php va racchiuso tra due tag: '<?php' e '?>';
+Per script embedded esiste anche una sintassi contratta per stampe
+<?php echo "testo" ?> diventa <?= "testo "?>
+
+Nel caso di script a se stante basta il tag d'apertura '<?php', anzi bisogna usare solo quello.
+Il rischio è quello di aggiungere del whitespace o newlines dopo la chiusura del tag, questi caratteri superflui
+verranno sempre aggiunti alla fine del documento caricato da php il che potrebbe causare problemi.
+(per verificare che i caratteri vengono automaticamente aggiunti prova a scrivere del testo dopo la chiusura del
+tag e vedi cosa ti carica)

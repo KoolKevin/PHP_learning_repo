@@ -1,0 +1,5 @@
+Php ha necessariamente bisogno di terminare le righe con un ';'
+altrimenti -> parse-error
+
+Unica eccezione quando ho uno script php embedded, in questo caso l'ultima riga prima del tag di chiusura ?> non
+ha bisogno del ';'

@@ -1,0 +1,18 @@
+- entrambe le funzioni stampano testo
+- entrambe le funzioni possono avere le parentesi tonde o meno
+- in genere si usa echo
+
+- print ritorna 1 quando stampa, echo non ritorna niente
+- echo ha anche questa sintassi echo 'xx','xx','xx'; print no
+
+- il carattere ' si può "escapare" con \ oppure usa ""
+
+- ci sono alcuni differenze tra apici singoli e doppi
+    - gli apici doppi sostituiscono il valore delle variabili mentre i singoli stampano letteralmente il valore
+      della variabile
+        - a volte si usa questa sintassi per aumentare la leggibilità -> echo "testo con variabile {$var}";
+    - gli apici doppi interpretano gli escape characters come \n \t, gli apici singoli no
+    - riassumendo gli apici singoli stampano il testo 'as is'; i doppi fanno dell'interpretazione
+
+- le con echo e print si possono anche stampare stringhe concatenate usando '.' come carattere di concatenazione
+
