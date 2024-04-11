@@ -1,0 +1,21 @@
+Le costanti sono variabili che una volta definite non possono più cambiare valore.
+Tipicamente le costanti hanno un nome tutto maiuscolo.
+
+Ci sono due metodi per definire costanti
+    - metodo 'define("nome", "valore")'
+    - 'const' keyword
+c'è qualche differenza tra i due metodi:
+    1) le costanti create con 'const' vengono definite al compile-time, mentre quelle create con 'define' vengono
+       definite a run-time. Questo significa che con define posso creare costanti dinamicamente per esempio dentro cicli
+       o blocchi if
+    2) la natura più dinamica della definizione con define ci permette anche di creare nomi di costanti dinamicamente per
+       esempio con una concatenazione a una variabile.
+       Questo non è possibile con const
+
+Le costanti si prestano bene quando bisogna rappresentare valori che non cambiano, per esempio stati come: OK, KO, PENDING.
+
+Esistono anche delle costanti predefinite, alcune interessanti sono: PHP_EOL, PHP_INT_SIZE, PHP_FLOAT_EPSILON
+-> per vederle tutte: https://www.php.net/manual/en/reserved.constants.php
+
+Esistono anche delle costanti dette "magiche". Queste costanti cambiano valori in base a dove vengono usate
+-> per vederle tutte: https://www.php.net/manual/en/reserved.constants.php

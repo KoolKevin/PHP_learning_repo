@@ -1,0 +1,4 @@
+In php è possibile anche definire variabili dinamicamente in modo simile a come si fa con define() per le costanti.
+
+La sintassi di una "variable variable" è: $$var = "valore"; sta dicendo:"definisci una variabile chiamata con il valore di $var
+ed assegnale il valore 'valore'";

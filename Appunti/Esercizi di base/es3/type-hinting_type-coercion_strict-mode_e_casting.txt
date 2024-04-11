@@ -1,0 +1,21 @@
+Il type hinting in PHP è una funzionalità che consente di specificare i tipi dei parametri delle funzioni e dei metodi.
+Ciò significa che è possibile suggerire quali tipi di dati possono essere accettati come argomenti quando si definiscono le firme
+delle funzioni o dei metodi.
+
+Se il tipo passato è diverso da quello suggerito attraverso il type hinting php effettuerà automaticamente type coercion, cioè
+tenterà automaticamente di trasformare il tipo di dato passato in quello suggerito.
+La type coercion è slegata dal type hinting ed è una caratteristica dei linguaggi tipati debolmente.
+La type coercion avviene ogni volta che si tenta di fare un'operazione tra due tipi diversi per esempio: 1 + "1" darà come risultato
+2, numero intero. La type coercion trasforma "1" in 1.
+
+Php supporta anche una strict mode che si imposta con: declare(strict_types=1), questa deve essere la prima direttiva dello script
+In questa modalità php diventa tipato fortemente e la type coercion viene disabilitata.
+
+In genere il type hinting e la modalità strict sono pratiche consigliate dato che rendono il comportamento del codice più
+facilmente prevedibile.
+
+In php si possono anche effettuare casting espliciti anteponendo il tipo a cui si vuole arrivare chiuso tra tonde, per esempio:
+    var $intero = (int)'5';
+
+In generale il casting non fallisce, mentre una coercion può fallire quando non riesce a convertire un tipo in un
+qualcosa di sensato

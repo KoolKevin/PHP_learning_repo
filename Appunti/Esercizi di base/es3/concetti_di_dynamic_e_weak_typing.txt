@@ -1,0 +1,41 @@
+---DYNAMIC/STATIC TYPING
+I linguaggi che controllano errori di tipo durante la compilazione sono tipati staticamente.
+I linguaggi che invece controllano i tipi a runtime sono tipati dinamicamente.
+Un altro modo di vederla è:
+    - I linguaggi con tipizzazione statica controllano i tipi prima di eseguire
+    - I linguaggi con tipizzazione dinamica controllano i tipi MENTRE eseguono
+
+In un linguaggio con tipizzazione dinamica, una variabile può essere assegnata a valori di tipi diversi durante l'esecuzione
+del programma senza che sia necessario specificare esplicitamente il tipo.
+Ad esempio, in Python (come in php), è possibile assegnare un valore intero a una variabile e in seguito assegnare una stringa
+alla stessa variabile senza errori di tipo.
+
+I linguaggi con tipizzazione debole sono linguaggi che effettuano conversioni di tipo, in modo implicito, mentre trattano
+operazioni tra tipi diversi, SENZA richiedere esplicitamente il casting o la gestione di eccezioni.
+La tendenza a fare conversioni di tipo implicite in modo automatico può essere più o meno accentuata per questo la "strongness" o
+la "weakness" dei tipi di un linguaggio va vista come uno spettro.
+Per esempio:
+    - js ha dei tipi molto deboli
+    - php un po' più forti
+    - java ha dei tipi molto forti
+
+Una tipizazzione forte/debole è indipendente da una tipizzazione dinamica/statica infatti esistono esempi per tutte e 4 le
+combinazioni:
+    - weak e dynamic: JavaScript
+    - weak e static: C
+    - strong e dynamic: Python
+    - strong e static: Java
+
+In conclusione dynamic/static typing si riferisce a QUANDO vengono determinati i tipi delle variabili.
+Mentre weak/strong typing si riferisce a QUANTO il linguaggio è rigido nel fare conversioni di tipo automaticamente.
+
+---PHP
+php è un linguaggio tipato dinamicamente quindi il type-checking avviene a run-time e i tipi delle variabili possono
+cambiare una volta definiti.
+Php è anche moderatamente weakly typed, fa quindi delle conversioni da solo, per esempio:
+    - 1 + "1" -> 2
+    ma
+    - 1 + "ciao" -> errore
+
+Nelle ultime versioni di php si è introdotto anche una sistema di tipi con tipizzazione forte, php però continua a
+essere un linguaggio principalmente con tipizzazione dinamica.

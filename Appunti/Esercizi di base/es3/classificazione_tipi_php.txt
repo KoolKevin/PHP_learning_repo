@@ -1,0 +1,17 @@
+# 4 tipi scalari
+    - bool
+    - int
+    - float
+    - string
+# 4 tipi composti
+    - array
+    - object
+    - callable
+    - iterable
+ # 2 tipi speciali
+    - resource
+    - null
+
+Per recuperare il tipo di una variabile a runtime esistono due funzioni
+    - gettype($var) -> restituisce solamente il tipo
+    - var_dump($var1, $var2, ...) -> stampa direttamente il tipo e anche informazioni come valore e lunghezza
