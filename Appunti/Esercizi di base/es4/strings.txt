@@ -1,0 +1,38 @@
+Per accedere a uno specifico carattere di una stringa si usa 0-based indexing.
+In php si può accedere a un carattere anche partendo dalla fine delle stringa specificando indici negativi.
+(prima di php 8 si potevano usare anche le graffe oltre che alle quadre per fare indexing, ora questo è deprecato)
+
+Se si tenta di accedere a un carattere out of bounds in scrittura alla stringa viene aggiunto semplicemente del padding;
+in lettura invece si ha un errore.
+
+Oltre ai singoli e doppi apici ci sono altri due modi per rappresentare string literals.
+Queste due rappresentazioni aggiuntive servono a rappresentare stringhe divise su più linee, contenenti espressioni complesse e
+contenenti apici singoli e doppi senza bisogno di fare escaping.
+     - Heredoc, tratta la stringa come se fosse racchiusa da doppi apici, esempio:
+      $stringa = <<<TEXT_ID
+      linea {$var1}
+      linea "2"
+      linea '3'\r\n
+      TEXT_ID;
+      NB: se faccio echo di questo sulla console ottengo una formattazione corretta perchè i newline sono interpretabili,
+      su browser no. Per ottenere una rappresentazione corretta anche su browser si usa la funzione nl2br($stringa);
+
+    - Nowdoc, tratta la stringa come se fosse racchiusa da apici singoli, esempio:
+      $stringa = <<<'TEXT_ID'
+      linea 1
+      linea 2
+      linea 3
+      TEXT_ID;
+
+    Le rappresentazioni Heredoc e nowdoc aumentano molto la leggibilità quando si hanno multi-line strings.
+    Un loro caso d'uso particolarmente utile è quando si vuole generare automaticamente dell'html con php, in questo caso
+    si può scrivere direttamente l'html in un unica stringa senza preoccuparsi di fare escaping e del cambio riga
+
+    $html = <<<HTML
+    <div>
+        <form>
+            <input />
+            ...
+        </form>
+    </div>
+    HTML;

@@ -1,0 +1,16 @@
+I float literal si possono specificare anche con la notazione scientifica: $var = 123e-3
+
+Come in ogni linguaggio, mentre si lavora con dei float bisogna stare attenti all'errore introdotto dalla loro rappresentazioni
+binaria. In altre parole i float hanno una precisione limitata.
+Per questo motivo non bisogna mai confrontare per uguaglianza float direttamente
+-> risorsa per vedere come vanno trattati: https://floating-point-gui.de/
+
+Esistono due costanti speciali che hanno come tipo float:
+    - NAN per operazioni non calcolabili come log(-1)
+    - INF quando si eccede la dimensione di un float
+non bisogna confrontare direttamente se una variabile è uguale a NAN/INF ma bisogna usare i metodi appositi:
+    - is_nan()
+    - is_infinite() / is_finite()
+
+Il casting a float è simile a quello ad int nel senso che si tenta sempre di trovare una rappresentazione numerica, se non ci si
+riesce si va a 0 come default. Fai riferimento al file sugli interi per trovare esempi di conversioni

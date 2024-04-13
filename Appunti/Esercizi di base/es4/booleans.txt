@@ -1,0 +1,18 @@
+Per specificare un valore booleano si usano le costanti predefinite: true, false. Entrambe case-insensitive
+
+Nella valutazione di espressioni la type coercion di php trasforma alcuni valori di altre variabili in true o false;
+alcuni esempi sono:
+    integers 0, -0 -> false
+    floats 0.0, -0.0 -> false
+    '', '0' -> false;
+    [] -> false
+    null -> false
+NB: una stringa uguale a 'false' viene comunque valutata come truthy dato che != da '' e '0' le uniche stringhe falsy
+
+
+In php quando si stampa avviene sempre un cast a string del contenuto da stampare. Nel caso della stampa di booleani
+    - true viene stampato come '1'
+    - false viene stampato come ''
+
+un metodo per controllare se una variabile è un booleano è con il metodo: is_bool()
+questo metodo ritorna a sua volte un booleano con valore true se l'argomento è booleano, false altrimenti

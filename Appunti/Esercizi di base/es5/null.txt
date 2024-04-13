@@ -1,0 +1,20 @@
+null è un tipo di dato speciale che rappresenta una variabile senza valore.
+
+Una variabile può valere null in 3 modi:
+    - le è stata assegnata la costante null
+    - non è stata definita
+    - è stata chiamata unset(), funzione che distrugge la variabile
+
+La costante 'null' è case insensitive
+
+Esiste una funzione is_null() per controllare se una variabile è null o meno, in alternativa si può usare anche l'operatore
+di uguaglianza stretta -> $var === null
+
+casting:
+    - a stringa; null si trasforma in ''; succede per esempio quando si prova a fare echo di null
+    - a intero; null si trasforma in 0
+    - a boolean; null si trasforma in false
+    - a array; null si trasforma in un array vuoto
+
+Un use case di null è quando si vuole definire una variabile ma non si sa ancora a che valore inizializzarla.
+Il valore verrà poi assegnato successivamente per esempio all'interno di if

@@ -10,7 +10,7 @@
     var_dump($stringa);
 
     //type hinting e coercion
-    function sum(int $x, int $y) {
+    function sum(int $x, int $y): int {
         echo "Sommo $x e $y" . PHP_EOL;
         var_dump($x, $y);
 

@@ -1,0 +1,21 @@
+Si possono specificare interi in molte basi:
+    - base 10 -> default
+    - base 16 -> prefisso 0x...
+    - base 8 -> prefisso 0...
+    - base 2 -> prefisso 0b...
+
+Per leggibilità si possono inserire dei '_' ogni 3 cifre per specificare qualsiasi literal numerico
+
+Quando avviene un integer overflow l'intero viene trasformato in un float
+
+Qua sotto una lista del comportamento dei vari tipi quando subiscono un cast a int
+(il cast si può fare con (int) oppure con (integer)):
+    - (int)$boolean -> 1 se true; 0 se false
+    - (int)$float -> perde la parte dopo la virgola; 5.987 -> 5
+    - (int)$string -> php tenta in tutti i modi di convertire la stringa in un numero, se non ci riesce converte sempre in 0
+        - (int)'5.98' -> 5
+        - (int)'45blahblah' -> 45
+        - (int)'testo' -> 0
+        - (int)null -> 0
+
+per verificare se una variabile è un intero si usano i metodi: is_int()/is_integer()
