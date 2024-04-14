@@ -1,0 +1,61 @@
+In php gli array sono una serie di valori anche non omogenei
+
+Ci sono due modi per definire un array:
+    - sintassi con parentesi quadre: [], ['campo1', 2]
+    - sintassi vecchia con funzione array(), array('campo1', 2)
+
+L'indexing degli array è 0-based come per le stringhe ma al contrario di quest'ultime NON posso accedere a campi a partire dalla
+fine usando un numero negativo.
+In php si possono definire i proprio indici per gli array, se non si specificano degli indici, vengono automaticamente assegnati
+quelli di default cioè 0-based.
+In php se si cerca di accedere ad un campo con un indice non definito verrà restituito null e verrà lanciato un warning.
+
+Si può controllare se un campo/chiave è definito utilizzando la variabile isset();
+Un altro modo oltre a isset per controllare se un indice è definito è attraverso la funzione: array_key_exists();
+NB: c'è una differenza sottile tra i due metodi; isset() verifica che la chiave esista nell'array e che il valore non sia null,
+    mentre array_key_exists() non ha questo vincolo aggiuntivo per il valore.
+
+Per stampare un array in modo meno verboso(no indicazione sui tipi) rispetto a var_dump si può usare la funzione print_r()
+
+Per ottenere la dimensione attuale di un array si usa la funzione count();
+
+Per fare push su un array si usa la square bracket syntax: $array[] = "elemento in fondo". In questo caso "elemendo in fondo"
+verrà appeso alla fine dell'array.
+Esiste anche la funzione array_push($array, el1, el2, ...) che fà la stessa cosa
+Per fare pop invece si usa la funzione array_pop()
+
+Si può anche fare pop dall'inizio dell'array con la funzione array_shift(), attenzione però che quest'ultima causa reindexing, cioè
+riassegnazioni degli indici ai valori degli array. Solo a quelli che però avevano indice numerico, quelli con indice stringa
+rimangono invariati.
+
+In php esistono anche array associativi, array in cui le chiavi possono essere anche stringhe arbitrarie oltre che interi.
+
+In generale gli array php sono sempre associativi, questo si può notare dal fatto che se si aggiungono valori a chiavi non definiti
+php non si lamenta.
+
+Dato che in php gli array sono eterogenei e associativi, definendo array multidimensionali(array in cui il valore di una coppia
+chiave valore è un altro array) si arriva ad una rappresentazione dei dati analogo a quella degli object literals di js, o del
+formato json/yaml.
+
+Se ho più chiavi dello stesso valore l'ultima fa ovverriding delle precedenti.
+NB: un comportamento inaspettato è causato dal fatto che in php le chiavi devono essere o interi o stringhe ma vengono accettate
+    anche chiavi di tipo diverso da quest'ultime. In questo caso avvengono dei cast che possono portare ad override se non si
+    sta attenti
+
+In php le chiavi sono opzionali, come visto all'inizio, php ci permette persino di definirne alcune ed altre no ed assegnarà
+automaticamente quelle mancanti secondo questa logica:
+    - se esistono indici precedenti interi assegno agli indici mancanti un valore incrementale a partire dall'ultimo più grande
+    - se non esistono indici interi precedenti parto da 0
+
+Un altro modo per rimuovere elementi da un array, oltre che a array_pop e shift, è attraverso la funzione già vista unset().
+Questa funzione se chiamata su un particolare campo elimina quel campo, se chiamata sull'array distrugge l'intero array.
+NB: quando si eliminano elementi da un array con unset(), al contrario di array_shift(), l'array NON subirà reindexing.
+    Questo effetto è particolarmente evidente per esempio se si unsettano tutti i campi dell'array e successivamente viene fatto
+    un push; ci si aspetterebbe che il nuovo elemento vengano abbia indice 0 ma invece avrà un indice incrementale basato
+    sull'indice maggiore precedente.
+    In conclusione la chiamata unset mantiene la chiave intera maggiore di un array!
+
+In php si può anche fare casting ad array con questa sintassi: (array) $x
+Il comportamento del cast ad array è simile per tutti i tipi di variabile, cioè crea un array che ha come unico elemento
+la variabile su cui è stato applicato il cast.
+Caso particolare è cast ad array di null, in questo caso viene creato semplicemente un array vuoto.
